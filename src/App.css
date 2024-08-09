@@ -1,0 +1,154 @@
+/* Custom properties */
+:root {
+    --clr-background: #0B2434;
+    --clr-accent: #59E391;
+    --clr-light: #F5F5F5;
+    --clr-lighter: #FFFFFF;
+    --clr-text: #4A4E74;
+    --clr-text-light: #636892;
+    --clr-text-dark: #2B283A;
+    --clr-text-winner: #ff3535;
+    --clr-button: #5035FF;
+}
+
+/* Layout */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: var(--clr-background);
+    padding: 1.25em;  
+}
+
+main {
+    background-color: var(--clr-light);
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+    padding: 2em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Typography */
+html {
+    font-family: 'Karla', sans-serif;
+}
+
+p {
+    color: var(--clr-text);
+    font-weight: bold;
+}
+
+/* App */
+
+.title {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--clr-text-dark);
+}
+
+.instructions {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: var(--clr-text-light);
+}
+
+.winner {
+    font-size: 1.3rem;
+    color: var(--clr-text-winner);
+}
+
+.instructions,
+.winner {
+    margin-top: 0.5em;
+    font-weight: 700;
+}
+
+.title,
+.winner {
+    text-transform: uppercase;
+}
+
+/* Dice */
+.dice-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    grid-gap: 1.25em;
+}
+
+.die-face {
+    height: 3.125em;
+    width: 3.125em;
+    background-color: var(--clr-lighter);
+    color: var(--clr-text-dark);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.die-face.isHeld {
+    background-color: var(--clr-accent);
+}
+
+/* .die-num {
+    font-size: 2rem;
+} */
+
+/* Button */
+.roll-dice {
+    padding: 0.5em 1em;
+    margin-top: 1.125em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--clr-button);
+    color: var(--clr-lighter);
+    font-size: 1.4rem;
+    font-family: 'Karla', sans-serif;
+    cursor: pointer;
+}
+
+.roll-dice:focus-visible,
+.roll-dice:hover {
+    outline: none;
+    transform: scale(0.95);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.roll-dice:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+/* Stats */
+.stats-container {
+    justify-content: center;
+    gap: 2em;
+    margin: 1em auto;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.rolls-best,
+.time-best {
+    flex-direction: column;
+}
+
+.stats-container,
+.rolls-best,
+.time-best {
+    display: flex;
+    align-items: center;
+}
+
+/* Media queries */
