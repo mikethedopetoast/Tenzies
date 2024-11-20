@@ -37,7 +37,6 @@ export default function Die(props) {
           backgroundSize: "cover"
         }}
       >
-        {/* <h2 className="die-num">{props.value}</h2> */}
       </div>
     )
 }
